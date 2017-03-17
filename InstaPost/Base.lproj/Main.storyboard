@@ -90,20 +90,20 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mnK-c8-Bgv">
                                 <rect key="frame" x="36" y="404" width="303" height="131"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nra-ha-wIt" customClass="CustomTextField" customModule="InstaPost" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nra-ha-wIt">
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="37"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="kHF-Fl-uhM"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="p6r-ay-KjD"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YRA-lg-aBX" customClass="CustomTextField" customModule="InstaPost" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="47" width="303" height="37"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="Dih-vT-nje"/>
                                         </connections>
@@ -113,6 +113,9 @@
                                         <color key="backgroundColor" red="0.50588235294117645" green="0.7803921568627451" blue="0.51764705882352935" alpha="0.87" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                         <state key="normal" title="Sign In"/>
+                                        <connections>
+                                            <action selector="buttonSignInClickedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dTo-3f-ZW2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -142,6 +145,10 @@
                             <constraint firstAttribute="trailing" secondItem="1xZ-Hi-472" secondAttribute="trailing" id="wI2-1F-HQz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tf_email" destination="nra-ha-wIt" id="QP6-vw-5Ij"/>
+                        <outlet property="tf_password" destination="YRA-lg-aBX" id="lnx-gH-dLh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

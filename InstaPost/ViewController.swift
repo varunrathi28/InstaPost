@@ -13,6 +13,10 @@ import Firebase
 import FirebaseAuth
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var tf_email:UITextField!
+    @IBOutlet weak var tf_password:UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,34 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBAction func buttonSignInClicked(sender : AnyObject?)
+    {
+        
+        if let email = tf_email.text , let password = tf_password.text
+        {
+            FIRAuth.auth()?.signIn(withEmail:email, password: password, completion: { (user, error) in
+                if error == nil{
+                    print("User Signed In")
+                }
+                
+                else
+                {
+                    FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+                        if error != nil
+                        {
+                            print("Error Creating user")
+                        }
+                        else
+                        {
+                            print("User created Successfully")
+                        }
+                    })
+                }
+            })
+        }
+        
+    }
     
     @IBAction func facebookButonTapped(sender : AnyObject?)
     {
@@ -75,6 +107,8 @@ extension ViewController : UITextFieldDelegate
 {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
         return true
     }
 }

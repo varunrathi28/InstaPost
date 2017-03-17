@@ -43,6 +43,8 @@ class CustomTextField: UITextField {
 extension CustomTextField: UITextFieldDelegate
 {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
         return true
     }
     
