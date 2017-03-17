@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		1D739457189F487C55684D33 /* Pods_InstaPost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 755B276A2F85DDAEAB85235D /* Pods_InstaPost.framework */; };
 		37B7B18E1E7ACAD800EEA306 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B7B18D1E7ACAD800EEA306 /* CustomTextField.swift */; };
+		37B7B1911E7C941F00EEA306 /* FeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B7B1901E7C941F00EEA306 /* FeedsViewController.swift */; };
 		37CFDE3B1E7A7CDA006288BD /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CFDE3A1E7A7CDA006288BD /* CustomView.swift */; };
 		37CFDE3E1E7A7E9A006288BD /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CFDE3D1E7A7E9A006288BD /* Constant.swift */; };
 		37CFDE401E7AC364006288BD /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CFDE3F1E7AC364006288BD /* RoundButton.swift */; };
 		37FE74001E7185D800AD5735 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FE73FF1E7185D800AD5735 /* AppDelegate.swift */; };
-		37FE74021E7185D800AD5735 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FE74011E7185D800AD5735 /* ViewController.swift */; };
+		37FE74021E7185D800AD5735 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FE74011E7185D800AD5735 /* SignInVC.swift */; };
 		37FE74051E7185D800AD5735 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FE74031E7185D800AD5735 /* Main.storyboard */; };
 		37FE74071E7185D800AD5735 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37FE74061E7185D800AD5735 /* Assets.xcassets */; };
 		37FE740A1E7185D800AD5735 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FE74081E7185D800AD5735 /* LaunchScreen.storyboard */; };
@@ -23,12 +24,13 @@
 /* Begin PBXFileReference section */
 		37B7B18D1E7ACAD800EEA306 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		37B7B18F1E7BF7C900EEA306 /* InstaPost.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InstaPost.entitlements; sourceTree = "<group>"; };
+		37B7B1901E7C941F00EEA306 /* FeedsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsViewController.swift; sourceTree = "<group>"; };
 		37CFDE3A1E7A7CDA006288BD /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		37CFDE3D1E7A7E9A006288BD /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		37CFDE3F1E7AC364006288BD /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		37FE73FC1E7185D800AD5735 /* InstaPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37FE73FF1E7185D800AD5735 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		37FE74011E7185D800AD5735 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		37FE74011E7185D800AD5735 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		37FE74041E7185D800AD5735 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37FE74061E7185D800AD5735 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37FE74091E7185D800AD5735 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,11 +97,12 @@
 				37CFDE391E7A7CAC006288BD /* Custom View */,
 				37FE74111E71861000AD5735 /* GoogleService-Info.plist */,
 				37FE73FF1E7185D800AD5735 /* AppDelegate.swift */,
-				37FE74011E7185D800AD5735 /* ViewController.swift */,
+				37FE74011E7185D800AD5735 /* SignInVC.swift */,
 				37FE74031E7185D800AD5735 /* Main.storyboard */,
 				37FE74061E7185D800AD5735 /* Assets.xcassets */,
 				37FE74081E7185D800AD5735 /* LaunchScreen.storyboard */,
 				37FE740B1E7185D800AD5735 /* Info.plist */,
+				37B7B1901E7C941F00EEA306 /* FeedsViewController.swift */,
 			);
 			path = InstaPost;
 			sourceTree = "<group>";
@@ -253,8 +256,9 @@
 			files = (
 				37CFDE3B1E7A7CDA006288BD /* CustomView.swift in Sources */,
 				37CFDE401E7AC364006288BD /* RoundButton.swift in Sources */,
+				37B7B1911E7C941F00EEA306 /* FeedsViewController.swift in Sources */,
 				37B7B18E1E7ACAD800EEA306 /* CustomTextField.swift in Sources */,
-				37FE74021E7185D800AD5735 /* ViewController.swift in Sources */,
+				37FE74021E7185D800AD5735 /* SignInVC.swift in Sources */,
 				37FE74001E7185D800AD5735 /* AppDelegate.swift in Sources */,
 				37CFDE3E1E7A7E9A006288BD /* Constant.swift in Sources */,
 			);

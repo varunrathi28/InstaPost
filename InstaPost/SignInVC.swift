@@ -12,7 +12,7 @@ import FBSDKCoreKit
 import Firebase
 import FirebaseAuth
 
-class ViewController: UIViewController {
+class SignInVC: UIViewController {
     
     
     @IBOutlet weak var tf_email:UITextField!
@@ -103,7 +103,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController : UITextFieldDelegate
+extension SignInVC : UITextFieldDelegate
 {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
