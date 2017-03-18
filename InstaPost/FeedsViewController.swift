@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
+import FirebaseAuth
 
 class FeedsViewController: UIViewController {
 
@@ -20,16 +22,19 @@ class FeedsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func signOutClicked(sender:AnyObject?)
+    {
+        let  status = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+       if status
+         {
+          try!  FIRAuth.auth()?.signOut()
+   
+            print("Userid removed from Keychain")
+            performSegue(withIdentifier: "goToLogin", sender: nil)
+        }
+        
     }
-    */
 
-}
+   }

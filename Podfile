@@ -10,6 +10,7 @@ target 'InstaPost' do
     pod 'Firebase/Auth'
     
     pod 'FBSDKLoginKit'
+    pod 'SwiftKeychainWrapper'
 
   # Pods for InstaPost
 

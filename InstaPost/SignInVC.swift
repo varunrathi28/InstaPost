@@ -11,6 +11,7 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
 import FirebaseAuth
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
     
@@ -20,7 +21,18 @@ class SignInVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if  let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            performSegue(withIdentifier: "goToFeed", sender: nil)
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +49,12 @@ class SignInVC: UIViewController {
             FIRAuth.auth()?.signIn(withEmail:email, password: password, completion: { (user, error) in
                 if error == nil{
                     print("User Signed In")
+                    
+                    if let user = user
+                    {
+                        self.saveToKeychain(userid: user.uid)
+                    }
+
                 }
                 
                 else
@@ -76,6 +94,8 @@ class SignInVC: UIViewController {
             {
                 print("Sucess Authentication")
                 
+                
+                
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 
                 self.firebaseAuth(credential)
@@ -97,8 +117,24 @@ class SignInVC: UIViewController {
             else
             {
                 print("Firebase authentication successful")
+                
+                if let user = user
+                {
+                    self.saveToKeychain(userid: user.uid)
+                }
             }
         })
+    }
+    
+    func saveToKeychain(userid: String)
+    {
+      let status =  KeychainWrapper.standard.set(userid, forKey: KEY_UID)
+        if status
+        {
+            print("Data Saved to Key chain: \(status)")
+        }
+        
+        performSegue(withIdentifier: "goToFeed", sender: nil)
     }
     
 }

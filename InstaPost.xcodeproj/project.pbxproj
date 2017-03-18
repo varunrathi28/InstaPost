@@ -98,11 +98,11 @@
 				37FE74111E71861000AD5735 /* GoogleService-Info.plist */,
 				37FE73FF1E7185D800AD5735 /* AppDelegate.swift */,
 				37FE74011E7185D800AD5735 /* SignInVC.swift */,
+				37B7B1901E7C941F00EEA306 /* FeedsViewController.swift */,
 				37FE74031E7185D800AD5735 /* Main.storyboard */,
 				37FE74061E7185D800AD5735 /* Assets.xcassets */,
 				37FE74081E7185D800AD5735 /* LaunchScreen.storyboard */,
 				37FE740B1E7185D800AD5735 /* Info.plist */,
-				37B7B1901E7C941F00EEA306 /* FeedsViewController.swift */,
 			);
 			path = InstaPost;
 			sourceTree = "<group>";
