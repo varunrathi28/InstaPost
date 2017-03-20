@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D739457189F487C55684D33 /* Pods_InstaPost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 755B276A2F85DDAEAB85235D /* Pods_InstaPost.framework */; };
+		374D8A121E7D9EBB00487D95 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374D8A111E7D9EBB00487D95 /* CircleImageView.swift */; };
 		37B7B18E1E7ACAD800EEA306 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B7B18D1E7ACAD800EEA306 /* CustomTextField.swift */; };
 		37B7B1911E7C941F00EEA306 /* FeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B7B1901E7C941F00EEA306 /* FeedsViewController.swift */; };
 		37CFDE3B1E7A7CDA006288BD /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CFDE3A1E7A7CDA006288BD /* CustomView.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		374D8A111E7D9EBB00487D95 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		37B7B18D1E7ACAD800EEA306 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		37B7B18F1E7BF7C900EEA306 /* InstaPost.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InstaPost.entitlements; sourceTree = "<group>"; };
 		37B7B1901E7C941F00EEA306 /* FeedsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				37CFDE3A1E7A7CDA006288BD /* CustomView.swift */,
 				37CFDE3F1E7AC364006288BD /* RoundButton.swift */,
 				37B7B18D1E7ACAD800EEA306 /* CustomTextField.swift */,
+				374D8A111E7D9EBB00487D95 /* CircleImageView.swift */,
 			);
 			name = "Custom View";
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				374D8A121E7D9EBB00487D95 /* CircleImageView.swift in Sources */,
 				37CFDE3B1E7A7CDA006288BD /* CustomView.swift in Sources */,
 				37CFDE401E7AC364006288BD /* RoundButton.swift in Sources */,
 				37B7B1911E7C941F00EEA306 /* FeedsViewController.swift in Sources */,
