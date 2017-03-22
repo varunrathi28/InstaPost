@@ -21,8 +21,11 @@ class CircleImageView: UIImageView {
 
         
         layer.cornerRadius = self.frame.height/2
+        clipsToBounds = true
         
     }
+    
+    
     
     /*
     // Only override draw() if you perform custom drawing.

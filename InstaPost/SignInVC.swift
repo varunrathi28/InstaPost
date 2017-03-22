@@ -52,9 +52,9 @@ class SignInVC: UIViewController {
                     
                     if let user = user
                     {
-                        self.saveToKeychain(userid: user.uid)
+                        let providerData = ["provider": user.providerID]
+                        self.saveToKeychain(userid: user.uid ,userData:  providerData)
                     }
-
                 }
                 
                 else
@@ -72,7 +72,6 @@ class SignInVC: UIViewController {
                 }
             })
         }
-        
     }
     
     @IBAction func facebookButonTapped(sender : AnyObject?)
@@ -113,21 +112,25 @@ class SignInVC: UIViewController {
             {
                 print("Firebase authentication Error: \(error)")
             }
-            
             else
             {
                 print("Firebase authentication successful")
                 
                 if let user = user
                 {
-                    self.saveToKeychain(userid: user.uid)
+                    
+                    let userData = ["provider":credential.provider]
+                    self.saveToKeychain(userid: user.uid ,userData: userData
+                    )
                 }
             }
         })
     }
     
-    func saveToKeychain(userid: String)
+    func saveToKeychain(userid: String, userData:Dictionary<String,String>)
     {
+        
+      DataService.shared.createFirebaseDBUser(uid: userid, userData: userData)
       let status =  KeychainWrapper.standard.set(userid, forKey: KEY_UID)
         if status
         {
