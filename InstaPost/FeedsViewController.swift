@@ -15,7 +15,7 @@ class FeedsViewController: UIViewController {
     
     @IBOutlet weak var tableview:UITableView!
     
-    var datasource:[AnyObject] = []
+    var datasource:[Post] = [Post]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +30,19 @@ class FeedsViewController: UIViewController {
                 for snap in snapshot
                 {
                     print("SNAP:\(snap)")
+                    if let postDic = snap.value as? Dictionary<String, AnyObject>
+                    {
+                     
+                        let key = snap.key
+                        let post = Post(postKey: key, postData: postDic)
+                        
+                        self.datasource.append(post)
+                    }
+                    
                 }
                 
             }
-            
+            self.tableview.reloadData()
         })
         
         
@@ -72,7 +81,7 @@ extension FeedsViewController : UITableViewDelegate
 extension FeedsViewController : UITableViewDataSource
 {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return datasource.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,6 +91,9 @@ extension FeedsViewController : UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_FOR_POST, for: indexPath) as! FeedPostCell
+        
+        let post = datasource[indexPath.row]
+        print("\(post.likes)")
         
         return cell
     }
