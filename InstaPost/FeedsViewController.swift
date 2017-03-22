@@ -11,17 +11,24 @@ import SwiftKeychainWrapper
 import FirebaseAuth
 import FirebaseDatabase
 
-class FeedsViewController: UIViewController {
+class FeedsViewController: UIViewController , UINavigationControllerDelegate {
     
     @IBOutlet weak var tableview:UITableView!
+    @IBOutlet weak var ivAddImage:UIImageView!
     
     var datasource:[Post] = [Post]()
 
+    var imagePicker:UIImagePickerController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableview.estimatedRowHeight = 100
         tableview.rowHeight = UITableViewAutomaticDimension
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
         
         DataService.shared.REF_POSTS.observe(.value, with: { (dataSnapShot) in
            
@@ -67,8 +74,16 @@ class FeedsViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func addImageClicked(_ sender : AnyObject)
+    {
+        imagePicker.sourceType = .camera
+        
+        present(imagePicker, animated: true, completion: nil)
+        
+    }
 
-   }
+}
 
 extension FeedsViewController : UITableViewDelegate
 {
@@ -114,3 +129,20 @@ extension FeedsViewController : UITextFieldDelegate
         return true
     }
 }
+
+extension FeedsViewController : UIImagePickerControllerDelegate
+{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage
+        {
+            ivAddImage.image = image
+            imagePicker.dismiss(animated: true, completion: nil)
+        }
+        
+        
+        
+    }
+    
+}
+

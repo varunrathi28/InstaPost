@@ -205,13 +205,17 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MNs-ec-OyL">
                                         <rect key="frame" x="8" y="8" width="327" height="49"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="AYI-bk-0M7" customClass="CircleImageView" customModule="InstaPost" customModuleProvider="target">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="AYI-bk-0M7" customClass="CircleImageView" customModule="InstaPost" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
                                                 <color key="backgroundColor" red="0.29803921568627451" green="0.68235294117647061" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="egC-pg-ht6"/>
                                                     <constraint firstAttribute="width" constant="49" id="qMA-c1-ToZ"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Q4r-O0-7wR" appends="YES" id="t4q-Th-Vez"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a Caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uiv-cw-Xd4">
                                                 <rect key="frame" x="59" y="0.0" width="209" height="49"/>
@@ -377,11 +381,17 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ivAddImage" destination="AYI-bk-0M7" id="Iuj-AG-FQ9"/>
                         <outlet property="tableview" destination="jy6-nL-Btq" id="DuE-ba-OIA"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToLogin" id="Mrm-iV-3uH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cM-wT-5XP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Q4r-O0-7wR">
+                    <connections>
+                        <action selector="addImageClicked:" destination="z7B-gd-sdE" id="G06-SW-Op8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1196" y="-7"/>
         </scene>
