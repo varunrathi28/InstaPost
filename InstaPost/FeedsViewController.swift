@@ -92,9 +92,9 @@ extension FeedsViewController : UITableViewDataSource
       
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_FOR_POST, for: indexPath) as! FeedPostCell
         
-        let post = datasource[indexPath.row]
-        print("\(post.likes)")
+        let post = datasource[indexPath.section]
         
+        cell.configureCell(aPost: post)        
         return cell
     }
     

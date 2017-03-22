@@ -18,6 +18,7 @@ class FeedPostCell: UITableViewCell {
     @IBOutlet weak var btnLike:UIButton!
     @IBOutlet weak var cellContainerView:UIView!
     
+    var post:Post!
     var isLiked:Bool = false
     
     override func awakeFromNib() {
@@ -31,6 +32,20 @@ class FeedPostCell: UITableViewCell {
          btnLike.setImage(UIImage(named: "filled-heart"), for: .selected)
     
     }
+    
+    func configureCell(aPost:Post)
+    {
+        self.post = aPost
+        self.postCaption.text = post.caption
+        
+//        if let likesNum = post.likes as? Int
+//        {
+//    //    self.likes.text = "\(likesNum)"
+//        }
+    }
+    
+    
+    
     
     @IBAction func likedClicked(sender:AnyObject)
     {
