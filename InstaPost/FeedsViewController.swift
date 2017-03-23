@@ -8,17 +8,19 @@
 
 import UIKit
 import SwiftKeychainWrapper
-import FirebaseAuth
+import Firebase
 import FirebaseDatabase
+
 
 class FeedsViewController: UIViewController , UINavigationControllerDelegate {
     
     @IBOutlet weak var tableview:UITableView!
     @IBOutlet weak var ivAddImage:UIImageView!
+    @IBOutlet weak var tfFeedCaption:UITextField!
     
     var datasource:[Post] = [Post]()
     var imagePicker:UIImagePickerController!
-    
+    var isImageSelected = false
     static var imageCache:NSCache<NSString, UIImage> = NSCache()
     
     override func viewDidLoad() {
@@ -78,11 +80,57 @@ class FeedsViewController: UIViewController , UINavigationControllerDelegate {
     
     @IBAction func addImageClicked(_ sender : AnyObject)
     {
-        imagePicker.sourceType = .camera
+        self.view.endEditing(true)
         
+        tfFeedCaption.resignFirstResponder()
+        
+        imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
         
     }
+    
+    @IBAction func postImage(sender:AnyObject)
+    {
+        
+        guard let postText = tfFeedCaption.text , postText != "" else
+            {
+                print("IP: Error! Empty Post")
+                return
+        }
+        
+        guard let img = ivAddImage.image,isImageSelected == true else {
+            print("IP: Error ! Image Not found")
+            return
+        }
+        
+        
+        if let imageData = UIImageJPEGRepresentation(img, 0.2)
+        {
+            let imageID = NSUUID().uuidString
+            
+            let metaData = FIRStorageMetadata()
+            metaData.contentType = "image/jpeg"
+            
+            DataService.shared.REF_POST_IMAGES.child(imageID).put(imageData, metadata: metaData)
+            {
+                (metadata,error ) in
+                
+                if error != nil
+                {
+                    print("IP:Unable to upload Image to FIRStorage")
+                }
+                else{
+                    self.tfFeedCaption.text = ""
+                    print("IP:FIRStorage Upload successful")
+                    let fileDownloadURL = metadata?.downloadURL()?.absoluteURL
+                }
+            }
+        }
+        
+    }
+    
+    
+    
 
 }
 
@@ -143,7 +191,13 @@ extension FeedsViewController : UIImagePickerControllerDelegate
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage
         {
             ivAddImage.image = image
+            isImageSelected = true
             imagePicker.dismiss(animated: true, completion: nil)
+            
+        }
+        else
+        {
+            print("IP: Unable to select image from camera")
         }
         
         
