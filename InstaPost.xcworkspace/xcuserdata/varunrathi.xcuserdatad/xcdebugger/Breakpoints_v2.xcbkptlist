@@ -164,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaPost/FeedPostCell.swift"
-            timestampString = "511688821.178779"
+            timestampString = "511961854.856248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
             landmarkName = "FeedPostCell"
             landmarkType = "3">
             <Locations>
@@ -257,13 +257,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaPost/DataService.swift"
-            timestampString = "511891575.00567"
+            timestampString = "511961854.856248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "createFirebaseDBUser(uid:userData:)"
-            landmarkType = "7">
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "DataService"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -273,11 +273,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaPost/FeedsViewController.swift"
-            timestampString = "511907803.520759"
+            timestampString = "511961854.856248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -303,7 +303,7 @@
                   moduleName = "InstaPost"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/varunrathi/Documents/POC%20Projetcs/New/Demo/Udemy%20Course/InstaPost/InstaPost/FeedsViewController.swift"
-                  timestampString = "511906506.582064"
+                  timestampString = "511961865.317812"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -318,7 +318,7 @@
                   moduleName = "InstaPost"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/varunrathi/Documents/POC%20Projetcs/New/Demo/Udemy%20Course/InstaPost/InstaPost/FeedsViewController.swift"
-                  timestampString = "511906506.585722"
+                  timestampString = "511961865.320554"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
@@ -333,7 +333,7 @@
                   moduleName = "InstaPost"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/varunrathi/Documents/POC%20Projetcs/New/Demo/Udemy%20Course/InstaPost/InstaPost/FeedsViewController.swift"
-                  timestampString = "511906506.588806"
+                  timestampString = "511961865.323406"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -348,7 +348,7 @@
                   moduleName = "InstaPost"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/varunrathi/Documents/POC%20Projetcs/New/Demo/Udemy%20Course/InstaPost/InstaPost/FeedsViewController.swift"
-                  timestampString = "511906506.592321"
+                  timestampString = "511961865.326175"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -363,7 +363,7 @@
                   moduleName = "InstaPost"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/varunrathi/Documents/POC%20Projetcs/New/Demo/Udemy%20Course/InstaPost/InstaPost/FeedsViewController.swift"
-                  timestampString = "511906506.628912"
+                  timestampString = "511961865.329144"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
@@ -411,14 +411,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InstaPost/FeedPostCell.swift"
-            timestampString = "511906505.271054"
+            filePath = "InstaPost/DataService.swift"
+            timestampString = "511961854.856248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "configureCell(aPost:)"
-            landmarkType = "7">
+            startingLineNumber = "15"
+            endingLineNumber = "15">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_2B4283F61EB118A3C0F11D7CAB5C2F8C_func0"
+                  moduleName = "InstaPost"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/varunrathi/Documents/POC%20Projetcs/New/Demo/Udemy%20Course/InstaPost/InstaPost/DataService.swift"
+                  timestampString = "511961865.338509"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InstaPost.DB_BASE_URL.unsafeMutableAddressor : __ObjC.FIRDatabaseReference"
+                  moduleName = "InstaPost"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/varunrathi/Documents/POC%20Projetcs/New/Demo/Udemy%20Course/InstaPost/InstaPost/DataService.swift"
+                  timestampString = "511961865.341381"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -17,8 +17,9 @@ class FeedsViewController: UIViewController , UINavigationControllerDelegate {
     @IBOutlet weak var ivAddImage:UIImageView!
     
     var datasource:[Post] = [Post]()
-
     var imagePicker:UIImagePickerController!
+    
+    static var imageCache:NSCache<NSString, UIImage> = NSCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,7 +110,12 @@ extension FeedsViewController : UITableViewDataSource
         
         let post = datasource[indexPath.section]
         
-        cell.configureCell(aPost: post)        
+        if let image = FeedsViewController.imageCache.object(forKey: post.imagesUrl as NSString) {
+            cell.configureCell(aPost: post ,img: image )
+        }
+        else {
+            cell.configureCell(aPost: post)
+        }
         return cell
     }
     

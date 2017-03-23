@@ -6,10 +6,13 @@ target 'InstaPost' do
   use_frameworks!
 
 	pod 'Firebase/Core'
-    
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
-    
+    pod 'Firebase/Storage'
+    pod 'Firebase/Messaging'
+    pod 'Firebase/Crash'
+    pod 'Firebase/Analytics'   
+	
     pod 'FBSDKLoginKit'
     pod 'SwiftKeychainWrapper'
 
