@@ -302,7 +302,7 @@
                                                                         <constraint firstAttribute="height" constant="133" id="REt-GF-TuQ"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type Your caption Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ah3-oy-096">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Type Your caption Here" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ah3-oy-096">
                                                                     <rect key="frame" x="0.0" y="209" width="333" height="64"/>
                                                                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>

@@ -22,6 +22,8 @@ class FeedPostCell: UITableViewCell {
     var post:Post!
     var isLiked:Bool = false
     
+    var likeRef:FIRDatabaseReference!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -38,6 +40,7 @@ class FeedPostCell: UITableViewCell {
     {
         self.post = aPost
         self.postCaption.text = post.caption
+        likeRef = DataService.shared.REF_USER_CURRENT.child("likes")
         
         if img != nil
         {
@@ -65,11 +68,35 @@ class FeedPostCell: UITableViewCell {
                     }
                 })
         }
+        
+        likeRef.observe(.value, with: { (snapshot) in
+            
+            if let _ = snapshot.value as? NSNull
+            {
+                
+            }
+            else
+            {
+                self.btnLike.isSelected = true
+            }
+        })
+        
     }
     
     @IBAction func likedClicked(sender:AnyObject)
     {
         btnLike.isSelected = !btnLike.isSelected
+        
+        if btnLike.isSelected {
+            post.adjustLikes(addLike: true)
+            
+            likeRef.setValue(true)
+        }
+        else
+        {
+            post.adjustLikes(addLike: false)
+            likeRef.removeValue()
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

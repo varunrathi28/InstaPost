@@ -8,8 +8,8 @@
 
 import Foundation
 import Firebase
-
-import FirebaseStorage
+import Firebase
+import SwiftKeychainWrapper
 
 // MARK: Firebase access URLs
 
@@ -33,11 +33,16 @@ class DataService
     var REF_USERS:FIRDatabaseReference {    return _REF_USERS   }
 
     
+    var REF_USER_CURRENT : FIRDatabaseReference
+    {
+        let uid = KeychainWrapper.standard.string(forKey: KEY_UID)
+        let ref = REF_USERS.child(uid!)
+        return ref
+    }
     
     // Storage References
     
     private var _REF_POST_IMAGES = STORAGE_BASE_URL.child("post-images")
-    
     var REF_POST_IMAGES : FIRStorageReference {   return _REF_POST_IMAGES   }
     
     // Storage getters for URLs 

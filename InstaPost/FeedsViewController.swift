@@ -120,9 +120,12 @@ class FeedsViewController: UIViewController , UINavigationControllerDelegate {
                     print("IP:Unable to upload Image to FIRStorage")
                 }
                 else{
-                    self.tfFeedCaption.text = ""
+                  
                     print("IP:FIRStorage Upload successful")
-                    let fileDownloadURL = metadata?.downloadURL()?.absoluteURL
+                    if let fileDownloadURL = metadata?.downloadURL()?.absoluteString
+                    {
+                    self.sendPostToFirebase(imageURL: fileDownloadURL)
+                    }
                 }
             }
         }
@@ -130,8 +133,23 @@ class FeedsViewController: UIViewController , UINavigationControllerDelegate {
     }
     
     
-    
 
+    func sendPostToFirebase(imageURL:String?)
+    {
+        let post: Dictionary<String, AnyObject> = ["caption": tfFeedCaption.text as AnyObject,
+                                                    "imageUrl": imageURL! as AnyObject,
+                                                    "likes": 0 as AnyObject]
+    
+         let firebasePost = DataService.shared.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        isImageSelected = false
+        tfFeedCaption.text = ""
+        ivAddImage.image = UIImage(named: "add-image")
+        
+        
+        tableview.reloadData()
+    }
 }
 
 extension FeedsViewController : UITableViewDelegate
@@ -154,10 +172,9 @@ extension FeedsViewController : UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
-        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_FOR_POST, for: indexPath) as! FeedPostCell
-        
-        let post = datasource[indexPath.section]
-        
+          let post = datasource[indexPath.section]
+      if  let cell = tableView.dequeueReusableCell(withIdentifier: CELL_FOR_POST) as? FeedPostCell
+      {
         if let image = FeedsViewController.imageCache.object(forKey: post.imagesUrl as NSString) {
             cell.configureCell(aPost: post ,img: image )
         }
@@ -165,6 +182,12 @@ extension FeedsViewController : UITableViewDataSource
             cell.configureCell(aPost: post)
         }
         return cell
+    }
+        else
+      {
+        return FeedPostCell()
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
